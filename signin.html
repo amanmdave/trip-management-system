@@ -1,0 +1,95 @@
+<html>
+
+
+<head>
+<title>TRIP MANAGEMENT</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<style type="text/css">
+body, html {
+  height: 100%;
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("signin.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+</style>
+
+</head>
+
+
+<body class="bg">
+	<div style=";padding-top: 50px; padding-bottom: 100px;text-align: center;">
+		<div class="alert alert-info" role="alert" style="height: 60px;font-size: 24px">
+
+			
+			LOGIN PAGE
+		
+		</div>
+	</div>
+
+<div  >
+	<div class="col-md-12" style=" padding-left: 30px;padding-top: 50px;padding-bottom: 50px;  margin: 0px" >
+
+<div style="border: 5px solid black;width: 320px;padding: 5px;background-color: white">
+		<form >
+		  <div  class="form-group">
+		    <label for="exampleInputEmail1">USERNAME</label>
+		    <input style="width: 300px; " type="email" class="form-control" id="email" aria-describedby="emailHelp" name="userEmail" placeholder="PLEASE ENTER THE USERNAME">
+		  </div>
+		  <div class="form-group">
+		    <label class="center-block" for="exampleInputPassword1">PASSWORD</label>
+		    <input style="width: 300px;" align="middle" type="password" class="form-control" id="PASSWORD" name="userPassword" placeholder="PLEASE ENTER THE PASSWORD">
+		  </div>
+		  	
+		
+			<div>
+				<a href="details.html" >
+					<button style="width: 300px; " type="submit" name="customer" class="btn btn-primary">Customer Login</button>
+				</a>
+			</div>
+			
+			<br />
+			
+		</form>
+		<?php 
+			$con=mysqli_connect("localhost","root","","t6");
+				if(isset($_POST['admin'])) 
+				{
+					$username = $_POST['userEmail'];
+					$pass = $_POST['userPassword'];
+					if($username == "admin" && $pass == "admin")
+					{
+						echo "<div>
+								<a href="admin.php" >
+								<button style="width: 300px; " type="submit" name="admin" class="btn btn-primary">Admin Login</button>
+								</a>		
+							  </div>";
+					}
+				}
+				mysqli_close($con);
+			?>
+  	
+
+  </div>
+</div>
+</div>
+
+</body>
+
+
+</html>
